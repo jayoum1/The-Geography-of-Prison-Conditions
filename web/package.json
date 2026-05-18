@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "prebuild": "node scripts/sync-bibliography.mjs",
+    "dev": "node scripts/sync-bibliography.mjs && vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
