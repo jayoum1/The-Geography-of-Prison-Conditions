@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+.Rhistory
+
+# Vite / Node (web app)
+web/node_modules/
+web/dist/
+web/dist-ssr/
+web/*.local
+
+# Logs
+*.log
+npm-debug.log*

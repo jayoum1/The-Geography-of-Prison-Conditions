@@ -1,0 +1,76 @@
+Website skeleton
+
+USA Map - a visual representation of all 50 states. Interactive and clickable. 
+Filter 1: States are represented in varying degrees of color for their respective statistics. https://usafacts.org/articles/how-much-do-states-spend-on-prisons/ 
+Incarceration rate
+Brief explanation of the statistic and connection to the aspects of:
+General criminal environment of the state
+Prison violence
+Officer salary
+Brief explanation of the statistic and connection to the aspect of prisoner treatment within prison conditions
+Per-prisoner spending
+Brief explanation of the statistic and connection to the aspects of:
+Living space (area)
+Rehabilitation & prisoner programs
+Health & hygiene
+Prison occupancy & overcrowding 
+Brief explanation of the statistic and connection to the aspect of overcrowding within prison conditions
+Filter 2: More granular data by city within each state - expressed through bar graphs. https://bjs.ojp.gov/jeet 
+Corrections vs. judicial and legal vs. police protection
+State vs. local
+State groupings: grouping states based on overall prison conditions (pressure) as one of the prison condition categories
+Category 1: Severe pressure states
+Arkansas, Mississippi, Alabama, Oklahoma, Texas, Florida, Georgia, Idaho, Louisiana, Missouri, Kentucky, Iowa, South Dakota, Tennessee
+Representative states: Mississippi (highest pressure),  Arkansas
+Category 2: High pressure states
+Montana, Indiana, Kansas, Virginia, Ohio, Wisconsin, South Carolina, Arizona, Colorado, North Carolina, Nebraska, North Dakota, Michigan, West Virginia. 
+Representative state: Nebraska (highest occupancy - overcrowding)
+Category 3: Moderate pressure states
+Wyoming, New Mexico, Nevada, Pennsylvania, Washington, Minnesota
+Representative state: To be found (good story)
+Category 4: Lower pressure states
+Delaware, Hawaii, Connecticut, Maryland, Oregon, California, Illinois, New Hampshire, Maine, Utah, Vermont, Alaska, New York, Rhode Island, Massachusetts
+Representative states (not confirmed): Connecticut (rodent story, contrast to sufficient funding), California (Santa Clara)
+Per-state relative prison spending. https://www.census.gov/library/visualizations/interactive/state-government-spending.html
+General data visualization graphs
+Scatterplots comparing statistics
+Incarceration rate vs. prison occupancy (are prisons large enough?)
+Officer salary vs per-prisoner spending (is spending balanced and justified?)
+Bar graph
+State ranking in a bar graph, not only the map and colors
+Apply for all filters (each filter also has a bar chart with rankings on the side) 
+
+*The website is technically an NGO, but won’t follow the traditional website format. It will place strong emphasis on the graph, and thanks to its interactivity it will contain various components beyond just numbers and statistics. The project will contain the same content an NGO website contains, but differently formatted.
+
+Formal outline + documentary
+
+Thesis: The federal government should allocate funding to states for general prison operation costs beyond the existing funding for training, technology and rehabilitation programs.
+
+*Important directional disclaimer: federal funding should be purposefully directed towards improving minimum living standards in prisons, and not to expanding imprisonment as past examples like the Crime Bill has taught us
+
+For each of the prison condition categories, have 1 or two main example stories and states. Narrate the story, and for the representative state make a deeper dive, including:
+
+More data graphs, including scatterplots comparing distinct statistics (e.g. incarceration rate vs. prison occupancy)
+Interesting statistics about the state (e.g. state with lowest officer salary stands out for poor prisoner treatment)
+Visually, don’t only mention the statistic but bring back a “mini-map” where only that state is highlighted and the statistic is shown
+A central argument that the state represents within the broader narrative of funding and prison conditions (e.g. less salary = poor treatment)
+If possible, have the state and story be aligned
+
+Category 1 representative: Mississippi and Arkansas
+
+States combine high incarceration with low spending and low officer pay. Most compelling argument for federal intervention
+Conditional funding to avoid prison expansion
+https://www.justice.gov/archives/opa/pr/justice-department-finds-conditions-mississippi-state-penitentiary-violate-constitution 
+
+Category 2 representative: Nebraska
+
+The dangers of overcrowding even when spending is not the lowest
+Occupancy gap and incarceration rate connection
+https://flatwaterfreepress.org/nebraska-prisoners-have-killed-their-cellmates-while-being-double-bunked-lawmakers-have-yet-to-limit-the-practice/ 
+
+Category 4 representative: Connecticut and California 
+
+Spending does not equate better conditions. 
+Money alone cannot solve the problem unless tied to oversight, infrastructure repair, and enforceable standards.
+Santa Clara for California: 
+https://www.ctpublic.org/news/investigative/2026-01-20/connecticut-prison-conditions-report-ombudsman 
