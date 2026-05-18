@@ -524,6 +524,34 @@ button       { font-family: var(--sans); cursor: pointer; }
   max-width: 620px;
 }
 
+.modal-panel.bib-modal {
+  max-width: 640px;
+}
+
+.bib-modal-sub {
+  font-size: 12px !important;
+  color: var(--ink-3) !important;
+  margin-top: 8px !important;
+  margin-bottom: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.bib-modal-body {
+  padding-top: 4px !important;
+}
+.bib-modal-body p {
+  font-size: 13.5px;
+  line-height: 1.68;
+  color: var(--ink-2);
+  margin: 0 0 15px;
+}
+.bib-modal-body em {
+  font-style: italic;
+}
+.bib-modal-body a {
+  word-break: break-word;
+}
+
 .modal-header {
   flex-shrink: 0;
   padding: 18px 28px 14px;
@@ -1235,6 +1263,28 @@ body:has(.main-page) #root {
   letter-spacing: -0.01em;
   white-space: nowrap;
 }
+.main-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+.main-nav-bib {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: color 110ms, border-color 110ms;
+}
+.main-nav-bib:hover { color: var(--ox); border-color: var(--ox); }
 
 /* ── Shared "Enter the Map" button ── */
 
@@ -1319,6 +1369,10 @@ body:has(.main-page) #root {
   transition: color 110ms, border-color 110ms;
 }
 .hero-secondary-link:hover { color: var(--ox); border-color: var(--ox); text-decoration: none; }
+
+button.hero-secondary-link.hero-bib-btn {
+  background: transparent;
+}
 
 /* ── Article body ── */
 

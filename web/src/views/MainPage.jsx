@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { CATEGORY_STORIES } from "../data/categoryStories.js";
+import BibliographyModal from "../components/BibliographyModal.jsx";
 
 // ─── Footnote source data ─────────────────────────────────────────────────────
 
@@ -129,6 +130,7 @@ const HIST_PARA =
 
 export default function MainPage() {
   const [openFnId, setOpenFnId] = useState(null);
+  const [bibOpen, setBibOpen]     = useState(false);
   const handleFootnote = useCallback(
     (id) => setOpenFnId((prev) => (prev === id ? null : id)),
     [],
@@ -140,9 +142,18 @@ export default function MainPage() {
       {/* ── Sticky top nav ── */}
       <nav className="main-nav">
         <span className="main-nav-title">The Geography of Prison Conditions</span>
-        <Link to="/map" className="btn-enter-map btn-sm">
-          Enter the Map →
-        </Link>
+        <div className="main-nav-actions">
+          <button
+            type="button"
+            className="main-nav-bib"
+            onClick={() => setBibOpen(true)}
+          >
+            Bibliography
+          </button>
+          <Link to="/map" className="btn-enter-map btn-sm">
+            Enter the Map →
+          </Link>
+        </div>
       </nav>
 
       {/* ── Hero ── */}
@@ -158,6 +169,13 @@ export default function MainPage() {
           <Link to="/category/severe" className="hero-secondary-link">
             View category stories
           </Link>
+          <button
+            type="button"
+            className="hero-secondary-link hero-bib-btn"
+            onClick={() => setBibOpen(true)}
+          >
+            Bibliography
+          </button>
         </div>
       </section>
 
@@ -239,6 +257,10 @@ export default function MainPage() {
         footnotes={MAIN_FOOTNOTES}
         onClose={() => setOpenFnId(null)}
       />
+
+      {bibOpen && (
+        <BibliographyModal onClose={() => setBibOpen(false)} />
+      )}
 
     </div>
   );
