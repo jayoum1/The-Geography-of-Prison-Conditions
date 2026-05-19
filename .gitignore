@@ -2,6 +2,9 @@
 Thumbs.db
 .Rhistory
 
+# Local media sources (large originals); deployed copies live in web/public/media/
+Pictures & Videos/
+
 # Vite / Node (web app)
 web/node_modules/
 web/dist/

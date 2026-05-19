@@ -1,7 +1,9 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, Fragment, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { CATEGORY_STORIES }  from "../data/categoryStories.js";
 import { NARRATIVE_CONTENT } from "../data/narrativeContent.js";
+import { CATEGORY_MEDIA }    from "../data/categoryMedia.js";
+import { getStorySteps }     from "../utils/storyScrollSteps.js";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // INLINE TEXT RENDERER — **bold** and [^N] footnote markers
@@ -42,11 +44,60 @@ function InlineText({ text, onFootnote }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// NARRATIVE — single-column article body
+// INLINE MEDIA
 // ─────────────────────────────────────────────────────────────────────────────
 
-function NarrativeBody({ content, onFootnote }) {
+function InlineMedia({ item }) {
+  if (item.type === "amendment") {
+    return (
+      <div className="story-inline-amendment" role="figure">
+        <p className="story-inline-amendment-label">{item.title}</p>
+        <blockquote className="story-inline-amendment-text">{item.text}</blockquote>
+      </div>
+    );
+  }
+
+  if (item.type === "video") {
+    return (
+      <div className="story-inline-media">
+        <video controls playsInline preload="metadata" aria-label={item.alt}>
+          <source src={item.src} type="video/mp4" />
+        </video>
+      </div>
+    );
+  }
+
+  return (
+    <div className="story-inline-media">
+      <img src={item.src} alt={item.alt ?? ""} loading="lazy" decoding="async" />
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// NARRATIVE — single column with media in the flow
+// ─────────────────────────────────────────────────────────────────────────────
+
+function NarrativeBody({ slug, content, onFootnote }) {
   if (!content) return null;
+
+  const mediaItems = CATEGORY_MEDIA[slug]?.items ?? [];
+  const steps = useMemo(
+    () => getStorySteps(slug, content.paragraphs.length),
+    [slug, content.paragraphs.length],
+  );
+
+  const mediaBeforeParagraph = useMemo(() => {
+    const map = new Map();
+    steps.forEach((step) => {
+      const item = mediaItems[step.mediaIndex];
+      if (!item) return;
+      const list = map.get(step.startPara) ?? [];
+      list.push(item);
+      map.set(step.startPara, list);
+    });
+    return map;
+  }, [steps, mediaItems]);
 
   return (
     <div className="story-narrative">
@@ -55,9 +106,14 @@ function NarrativeBody({ content, onFootnote }) {
       )}
 
       {content.paragraphs.map((para, i) => (
-        <p key={i} className="narrative-para">
-          <InlineText text={para} onFootnote={onFootnote} />
-        </p>
+        <Fragment key={i}>
+          {mediaBeforeParagraph.get(i)?.map((item, j) => (
+            <InlineMedia key={`${item.type}-${j}`} item={item} />
+          ))}
+          <p className="narrative-para">
+            <InlineText text={para} onFootnote={onFootnote} />
+          </p>
+        </Fragment>
       ))}
     </div>
   );
@@ -177,7 +233,7 @@ export default function CategoryStoryPage() {
       </header>
 
       <article className="story-body-wrap">
-        <NarrativeBody content={content} onFootnote={handleFootnote} />
+        <NarrativeBody slug={slug} content={content} onFootnote={handleFootnote} />
       </article>
 
       <footer className="story-page-footer">

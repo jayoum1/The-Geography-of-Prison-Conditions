@@ -1064,6 +1064,53 @@ body:has(.story-page) #root {
   max-width: none;
 }
 
+.story-inline-media {
+  margin: 32px 0;
+}
+
+.story-inline-media img,
+.story-inline-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  border: 1px solid var(--rule-light);
+}
+
+.story-inline-media video {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #1a1714;
+}
+
+.story-inline-amendment {
+  margin: 32px 0;
+  padding: 20px 22px;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--ox);
+  border-radius: 2px;
+}
+
+.story-inline-amendment-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ox);
+  margin: 0 0 12px;
+}
+
+.story-inline-amendment-text {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.72;
+  color: var(--ink-2);
+  margin: 0;
+  font-style: italic;
+}
+
 /* ── Inline footnote buttons ── */
 
 .fn-sup {
